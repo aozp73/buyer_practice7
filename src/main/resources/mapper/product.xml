@@ -5,7 +5,7 @@
 
 <mapper namespace="shop.mtcoding.buyer9.model.ProductRepository">
   <insert id="insert">
-    insert into product_tb(name, price, qty) values(#{name},#{price},#{qty},now())
+    insert into product_tb(name, price, qty, created_at) values(#{name},#{price},#{qty},now())
   </insert>
 
   <select id="findAll" resultType="shop.mtcoding.buyer9.model.Product">
