@@ -1,15 +1,20 @@
 package shop.mtcoding.buyer9.model;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface UserRepository {
-    public int insert(@Param("username") String username, @Param("password") int password, @Param("email") int email);
+    public int insert(@Param("username") String username, @Param("password") String password,
+            @Param("email") String email);
 
-    public Product findAll();
+    public List<User> findAll();
 
-    public Product findById(int id);
+    public User findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+
+    public User findById(int id);
 
     public int updateById(@Param("id") String id, @Param("password") String password);
 

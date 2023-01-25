@@ -1,4 +1,4 @@
-create table purchase_tb(
+create table product_tb(
     id int auto_increment primary key,
     name varchar not null,
     price int not null,
