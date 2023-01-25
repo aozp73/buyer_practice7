@@ -18,6 +18,7 @@
                     <td>${purchase.count}</td>
                     <td>
                         <form action="/purchase/delete" method="post">
+                            <input type="hidden" name="purchaseId" value="${purchase.id}">
                             <button type="submit">삭제</button>
                         </form>
                     </td>

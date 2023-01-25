@@ -57,4 +57,22 @@ public class PurchaseController {
 
         return "purchase/list";
     }
+
+    @PostMapping("/purchase/delete")
+    public String delete(int purchaseId) {
+        // 인증
+        User principal = (User) session.getAttribute("principal");
+        if (principal == null) {
+            return "redirect:/notfound";
+        }
+
+        // 트랜잭션
+        int res = purchaseService.삭제하기(purchaseId);
+        if (res != 1) {
+            return "redirect:/notfound";
+        }
+
+        return "redirect:/purchase";
+    }
+
 }
